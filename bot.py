@@ -8,20 +8,10 @@ intents=intents=discord.Intents.all()
 #intents = discord.Intents()
 #intents.members = True
 
-TOKEN = 'MTAwODk0NzUzMzIzNTYxNzk0Mw.Ghqvn_.SpsJjZYHBkRCHUEtJ3YvfG3-EdaB6FB_8DUY2U'
+TOKEN = 'MTAwODk0NzUzMzIzNTYxNzk0Mw.GXFDvr.QgxlA5sxpGPzMUpcrInJoqHuXXIR5QIJgLjBo0'
 bot=commands.Bot(command_prefix='!',intents=intents)
 
 #Events
-class Greetings(commands.Cog):
-    def __init__(self, bot):
-        self.bot = bot
-        self._last_member = None
-
-    @commands.Cog.listener()
-    async def on_member_join(self, member):
-        channel = member.guild.system_channel
-        if channel is not None:
-            await channel.send(f'Welcome {member.mention}.')
 
 @bot.event
 async def  on_member_join(member):
@@ -34,4 +24,8 @@ async def  on_member_join(member):
 async def  on_member_remove(member):
     channel=bot.get_channel(1034052502431219712)
     await channel.send(f'{member} left!' )
+  
+@bot.command()
+async def test(ctx):
+    await ctx.send(f'{round(bot.latency*1000)} (ms)')
 bot.run(TOKEN)
