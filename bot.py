@@ -1,6 +1,8 @@
 import discord
 from discord.ext import commands
-
+import json
+with open('setting.json',mode='r',encoding="utf-8") as jfile:
+    jdata=json.load(jfile)
 #try add this 
 intents=intents=discord.Intents.all()
 
@@ -8,24 +10,24 @@ intents=intents=discord.Intents.all()
 #intents = discord.Intents()
 #intents.members = True
 
-TOKEN = 'MTAwODk0NzUzMzIzNTYxNzk0Mw.GXFDvr.QgxlA5sxpGPzMUpcrInJoqHuXXIR5QIJgLjBo0'
+TOKEN = 'MTAwODk0NzUzMzIzNTYxNzk0Mw.GWyHXz.3GcrNdobFdZYCUBm_5xfwdZhBA6HXNyDZKfD7o'
 bot=commands.Bot(command_prefix='!',intents=intents)
 
 #Events
 
 @bot.event
 async def  on_member_join(member):
-    channel=bot.get_channel(1034052336596824176)
+    channel=bot.get_channel(int(jdata['Welcom_channal']))
     await channel.send(f'{member} join!' )
 
 
 
 @bot.event
 async def  on_member_remove(member):
-    channel=bot.get_channel(1034052502431219712)
+    channel=bot.get_channel(int(jdata['leave_channal']))
     await channel.send(f'{member} left!' )
   
 @bot.command()
 async def test(ctx):
     await ctx.send(f'{round(bot.latency*1000)} (ms)')
-bot.run(TOKEN)
+bot.run(jdata["TOKEN"])
