@@ -12,7 +12,7 @@ intents=discord.Intents.all()
 
 #if the above don't work, try with this
 #intents = discord.Intents()
-#intents.members = True
+intents.members = True
 
 
 bot=commands.Bot(command_prefix='!',intents=intents,help_command=None)
@@ -25,10 +25,9 @@ async def help(ctx):
     embed=discord.Embed(
         title='help',
         description="Help for you",
-        color=discord.color.red()
-    
-    
+        color=discord.Color.red()   
     )
+        
     await ctx.send(embed=embed)
     
 
@@ -39,7 +38,7 @@ async def help(ctx):
 
 
 
-bot.run('MTAwODk0NzUzMzIzNTYxNzk0Mw.GGwVdq.Aj53FsyS3keF6Db43QaISpm9yV7pjhaBW7khR4')
+bot.run('MTAwODk0NzUzMzIzNTYxNzk0Mw.G-xWOB.DNmzLmdGd5SXqN3TrAV36DdzLVRheXoZkUvKQY')
 
 
 
