@@ -8,6 +8,7 @@ intents.members=True
 from datetime import datetime
 import time
 from meme import Main_second
+from music import music_cog
 #try add this 
 #if the above don't work, try with this
 #intents = discord.Intents()
@@ -28,6 +29,7 @@ async def on_ready():
     print("Bot is online")
     await bot.add_cog(Main(bot))
     await bot.add_cog(Main_second(bot))
+    await bot.add_cog(music_cog(bot))
 
 @bot.event
 async def on_member_join(member):
@@ -56,7 +58,7 @@ async def on_member_remove(member):
 
 
 
-bot.run('MTAwODk0NzUzMzIzNTYxNzk0Mw.GlrbnO.hUMxMMKd6gz0AyWagwvveNT8hjsX4RgQ9G0iuM')
+bot.run('MTAwODk0NzUzMzIzNTYxNzk0Mw.GF66rN.nXgKxEbI9H0KjUItQHZH7qBOVLjthPTPCYpWzU')
 
 
 
