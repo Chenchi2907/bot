@@ -58,7 +58,7 @@ async def on_member_remove(member):
 
 
 
-bot.run('MTAwODk0NzUzMzIzNTYxNzk0Mw.GF66rN.nXgKxEbI9H0KjUItQHZH7qBOVLjthPTPCYpWzU')
+bot.run('MTAwODk0NzUzMzIzNTYxNzk0Mw.GVJRM1.34fXXBkFMs9eTt0nN4ed_q95tSs_qnRupHetTg')
 
 
 
