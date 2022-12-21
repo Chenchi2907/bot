@@ -13,5 +13,8 @@ class Main(commands.Cog):
     @commands.command()
     async def ping(self,ctx):
         await ctx.send(f"{round(self.bot.latency*1000)} (ms)")
-
+    @commands.Cog.listener()
+    async def on_message(self,msg):
+        if msg.content=="嗨":
+            await msg.channel.send("嗨OwO")
     
